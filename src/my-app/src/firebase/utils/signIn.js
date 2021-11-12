@@ -3,7 +3,7 @@ import { getAuth } from '@firebase/auth';
 import { GoogleAuthProvider } from "firebase/auth";
 import * as firebaseui from "firebaseui";
 import { initializeApp } from '@firebase/app';
-import { firebaseApp, firebaseConfig } from '../firebase';
+import { firebaseConfig } from '../firebase';
 
 initializeApp(firebaseConfig);
 var ui = new firebaseui.auth.AuthUI(getAuth());
