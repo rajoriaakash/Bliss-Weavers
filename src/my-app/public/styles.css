@@ -192,3 +192,15 @@ footer p {
   }
 }
 /* product section end  */
+
+* product section start  */
+.product-div{
+  padding: 6%;
+
+  margin: auto 5%;
+  margin-bottom: 0%;
+}
+.price-div{
+  font-size: 1.6rem;
+}
+/* product section end  */
