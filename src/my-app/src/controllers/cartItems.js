@@ -16,3 +16,5 @@ async function get_items(userId){
     const items=await getDocs(i)
     return items
 }
+
+export {add_item, get_items};

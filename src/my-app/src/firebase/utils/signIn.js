@@ -6,6 +6,7 @@ import { initializeApp } from '@firebase/app';
 import { firebaseConfig } from '../firebase';
 
 initializeApp(firebaseConfig);
+console.log("Firebase connected");
 var ui = new firebaseui.auth.AuthUI(getAuth());
 
 var uiConfig = {
