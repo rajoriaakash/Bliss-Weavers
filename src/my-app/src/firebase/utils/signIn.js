@@ -1,55 +1,31 @@
-import * as firebase from 'firebase/compat/app';
-import { getAuth } from '@firebase/auth';
-import { GoogleAuthProvider } from "firebase/auth";
-import * as firebaseui from "firebaseui";
-import { initializeApp } from '@firebase/app';
-import { firebaseConfig } from '../firebase';
+import { initializeApp } from "@firebase/app";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { firebaseConfig } from "../firebase";
 
-initializeApp(firebaseConfig);
-var ui = new firebaseui.auth.AuthUI(getAuth());
+function SignIn() {
+  initializeApp(firebaseConfig);
+  console.log("Firebase connected");
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
 
-var uiConfig = {
-    callbacks: {
-      signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-        // User successfully signed in.
-        // Return type determines whether we continue the redirect automatically
-        // or whether we leave that to developer to handle.
-        return true;
-      },
-      uiShown: function() {
-        // The widget is rendered.
-        // Hide the loader.
-        document.getElementById('loader').style.display = 'none';
-      }
-    },
-    // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-    signInFlow: 'popup',
-    signInSuccessUrl: '<url-to-redirect-to-on-success>',
-    signInOptions: [
-      // Leave the lines as is for the providers you want to offer your users.
-      GoogleAuthProvider.PROVIDER_ID,
-
-    ],
-    // Terms of service url.
-    tosUrl: '<your-tos-url>',
-    // Privacy policy url.
-    privacyPolicyUrl: '<your-privacy-policy-url>'
-  };
-
-// The start method will wait until the DOM is loaded.
-ui.start('#firebaseui-auth-container', uiConfig);
-
-
-const SignIn = () => {
-    
-    return (
-        <>
-        <body>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader"></div>
-        </body>
-        </>
-    );
 }
- 
-export default SignIn;
+
+export {SignIn}

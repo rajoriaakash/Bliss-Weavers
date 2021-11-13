@@ -1,7 +1,7 @@
 import React from 'react'
 import ARTISAN1 from '../images/ARTISAN1.jpeg'
 import AboutUsContent from "../AboutUsContent"
-import SlideForAboutUs from './SlideForAboutUs.jsx'
+import SlideForAboutUs from './SlideForAboutUs'
 
  function CreateNote(newNote){
 return (

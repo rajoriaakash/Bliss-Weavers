@@ -5,7 +5,7 @@ import upperslide_3 from '../images/upperslide_3.jpg'
 import upperslide_4 from '../images/upperslide_4.jpg'
 import upperslide_5 from '../images/upperslide_5.jpg'
 import upperslide_6 from '../images/upperslide_6.jpg'
-import Slide from './Slide.jsx'
+import Slide from './Slide.js'
 
 function UpperSlide () {
   return (
