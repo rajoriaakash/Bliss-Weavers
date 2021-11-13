@@ -1,4 +1,5 @@
 import React from 'react'
+import { SignIn } from '../firebase/utils/signIn'
 import logo from '../images/logo.png'
 
 function Header () {
@@ -67,6 +68,7 @@ function Header () {
           <form className='form-inline my-2 my-lg-0'>
             <button
               className='btn btn-dark'
+              onClick ={SignIn}
               type='submit'
               style={{ backgroundColor: '#1c0c5b' }}
             >

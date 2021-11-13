@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import {add_item,get_items} from "../../models/cartItem.js"
+import {add_item,get_items} from "../../controllers/cartItems.js"
 const cartRoute=Router()
 cartRoute.get('/',async (req,res)=>{
     let items
