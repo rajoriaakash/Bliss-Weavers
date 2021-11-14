@@ -1,5 +1,6 @@
 import { initializeApp } from "@firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import App from "../../App";
 import { firebaseConfig } from "../firebase";
 
 function SignIn() {
@@ -14,6 +15,7 @@ function SignIn() {
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+
     // ...
   }).catch((error) => {
     // Handle Errors here.

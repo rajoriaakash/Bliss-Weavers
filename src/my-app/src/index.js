@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
+import { category } from './components/Products';
+import { SignIn } from './firebase/utils/signIn';
+import SingleProductPageContent from './SingleProductPageContent';
 
 
 ReactDOM.render(
@@ -11,6 +14,8 @@ ReactDOM.render(
     <BrowserRouter>
       <Routes>
         <Route path = "/" element = {<App></App>}></Route>
+        <Route path = "signIn" element={<SignIn></SignIn>}></Route>
+        <Route path = "product" element={<SingleProductPageContent></SingleProductPageContent>}></Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
