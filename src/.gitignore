@@ -12,7 +12,7 @@
 /build
 
 #credentials
-/default.json
+/config
 
 # misc
 .DS_Store
