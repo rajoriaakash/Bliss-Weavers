@@ -1,10 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { add_product } from '../controllers/products'
-import { SignIn } from '../firebase/utils/signIn'
 import logo from '../images/logo.png'
-import SingleProductPageContent from '../SingleProductPageContent'
-import products from '../SingleProductPageMatter'
+import { Link } from 'react-router-dom'
 
 function Header () {
   return (
@@ -70,7 +66,8 @@ function Header () {
             </li>
           </ul>
           <form className='form-inline my-2 my-lg-0'>
-            <Link to = "signIn">
+        
+          <Link to = "signIn">
             <button
               className='btn btn-dark'
               type='submit'
@@ -79,6 +76,7 @@ function Header () {
               Login
             </button>
             </Link>
+ 
           </form>
         </div>
       </nav>
