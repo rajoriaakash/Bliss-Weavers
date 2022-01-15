@@ -1,16 +1,16 @@
 import React from 'react'
 import ARTISAN1 from '../images/ARTISAN1.jpeg'
-import AboutUsContent from "../AboutUsContent"
-import SlideForAboutUs from './SlideForAboutUs'
+import AboutUsContent from '../AboutUsContent'
+import SlideForAboutUs from './SlideForAboutUs.js'
 
- function CreateNote(newNote){
-return (
-  <SlideForAboutUs src={newNote.img} key={newNote.id} story={newNote.story}/>
-)
- }
+function CreateNote (newNote) {
+  return (
+    <SlideForAboutUs src={newNote.img} key={newNote.id} story={newNote.story} />
+  )
+}
 function AboutUs () {
   return (
-    <div id="aboutUs-section">
+    <div id='aboutUs-section'>
       <h1 className='about-us-title'>About us</h1>
       <h3 className='about-us-title'>
         Meet our

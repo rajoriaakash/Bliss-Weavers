@@ -1,21 +1,37 @@
 import React from 'react'
-import Footer from './components/Footer.js'
 import Header from './components/Header.js'
+import Footer from './components/Footer.js'
 import Content from './components/Content.js'
+import Store from './components/Store.js'
+import Product from './SingleProduct.js'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { category } from './components/Products'
+import { SignIn } from './firebase/utils/signIn'
 
 function App () {
   return (
-      <div id="home-section">
-    <Header />
-      <Content/>
-      <Footer/>
-    </div>
-  
-  );
+    <Router>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <div id='home-section'>
+              <Header />
+              <Content />
+              <Footer />
+            </div>
+          }
+        />
+        <Route path='signIn' element={<SignIn></SignIn>}></Route>
+        <Route path='/product' element={<Store />} />
+        <Route
+          path='/product/:user_id'
+          render={props => <Product {...props} />}
+        />
+        <Route>404 error page</Route>
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
-
-
-
-
+export default App
