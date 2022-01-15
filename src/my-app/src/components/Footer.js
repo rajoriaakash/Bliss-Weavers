@@ -1,29 +1,30 @@
 import React from 'react'
+import '../index.css'
 var date = new Date().getFullYear()
 function Footer () {
   return (
-    <footer id="contact-section">
+    <footer id='contact-section'>
       <div className='contact-us-main'>
-        <h2 style={{paddingTop:"2%"}}>Contact us</h2>
+        <h2 style={{ paddingTop: '2%' }}>Contact us</h2>
         <div>
-          <p className='contact-us-icons'>
+          <div className='contact-us-icons'>
             <img src='https://img.icons8.com/ios-glyphs/30/000000/address.png' />
             Address: Village Bajghera, Sec 12, Maharashtra-122017
-          </p>
-          <p className='contact-us-icons'>
+          </div>
+          <div className='contact-us-icons'>
             <img src='https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png' />
             Phone number: +123 456 789
-          </p>
-          <p className='contact-us-icons'>
+          </div>
+          <div className='contact-us-icons'>
             <img
               style={{ flex: 1, width: 50, height: 50, resizeMode: 'contain' }}
               src='https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-email-email-flatart-icons-outline-flatarticons-1.png'
             />
             Email us: bliss@weavers.org
-          </p>
+          </div>
         </div>
+        <h5 style={{ color: 'gray' }}>Reach us</h5>
         <div className='reachUs'>
-          <h5 style={{color:"gray"}}>Reach us</h5>
           <a href='https://www.facebook.com/'>
             <img src='https://img.icons8.com/ios-glyphs/30/000000/facebook-new.png' />
           </a>
