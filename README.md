@@ -11,4 +11,4 @@
     "dbURI": "Your connection URL"
 }
 ```
-10. Run the app bt typing `nodemon` in terminal
+10. Run the app by typing `nodemon` in terminal.
