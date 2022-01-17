@@ -8,7 +8,9 @@
 9. Add your MongoDb connection url inside this file as : 
 ```
 {
-    "dbURI": "Your connection URL"
+    "dbURI": "YOUR DB URI",
+    "jwtsecret": "your jwt secret",
+    "StripeAPIKey": "YOUR STRIPE SECRET API KEY"
 }
 ```
 10. Run the app by typing `nodemon` in terminal.
