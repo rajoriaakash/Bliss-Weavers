@@ -5,7 +5,6 @@ const config = require('config');
 
 const app = express();
 app.use(express.json());
-
 const dbURI = config.get('dbURI');
 const port = process.env.PORT || 4000;
 mongoose.connect(dbURI, {

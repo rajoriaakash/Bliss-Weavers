@@ -5,7 +5,7 @@ const OrderSchema = new Schema({
     userId: {
         type: String,
     },
-    items: [{
+    products: [{
         productId: {
             type: String,
         },
