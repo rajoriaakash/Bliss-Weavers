@@ -17,6 +17,7 @@ const signUp = (req,res) => {
             {
                 msg: 'User already exists'
             });
+            const newUser = new User({ name, email, password });
 
             bcrypt.genSalt(10, (err, salt) => {
                 bcrypt.hash(password, salt, (err, hash) => {

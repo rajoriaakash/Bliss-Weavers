@@ -11,7 +11,7 @@ const postProduct = (req,res) => {
     const newProduct = new Product(req.body);
     newProduct.save()
         .then(product =>
-            res.json(products))
+            res.json(product))
 }
 
 const updateProduct = (req,res) => {
