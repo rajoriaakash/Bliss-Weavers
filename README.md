@@ -1,3 +1,7 @@
+# Bliss-Weavers
+It is an e-commerce website for supporting and encouraging rural women of India.
+
+This application is being built using MERN.
 ## Setting up the project in your local environment💻
 1. Make sure [Node.js](https://nodejs.org/en/download/) is installed in your system.
 2. Fork this repository.
