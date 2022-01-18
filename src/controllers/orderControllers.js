@@ -43,3 +43,5 @@ const checkout = async (req,res) => {
         res.status(500).send("Something went wrong");
     }
 }
+
+module.exports = {getOrders,checkout};

@@ -14,7 +14,7 @@ const postProduct = (req,res) => {
             res.json(products))
 }
 
-const update = (req,res) => {
+const updateProduct = (req,res) => {
     Product.findByIdAndUpdate({_id: req.params.id},req.body).then(function(product){
         Product.findOne({_id: req.params.id}).then(function(product){
             res.json(product);
@@ -27,3 +27,5 @@ const deleteProduct  = (req,res) => {
         res.json({success: true});
     });
 }
+
+module.exports = {getProducts,postProduct,deleteProduct,updateProduct};
