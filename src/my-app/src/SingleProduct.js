@@ -14,13 +14,14 @@ import {
   Tag
 } from '@chakra-ui/react'
 import Header from './components/Header'
+
 // const Header = ({ title }) => (
 //   <Box padding={6} shadow='md'>
 //     <Heading>{title}</Heading>
 //   </Box>
 // )
-function Product ({ location }) {
-  const { state } = location
+function Product ( {location} ) {
+    const {state} = location
   return (
     <Box>
       <Header />
@@ -28,7 +29,9 @@ function Product ({ location }) {
         <Box m={10}>
           <SimpleGrid spacing={4} columns={{ base: 1, md: 5 }}>
             <GridItem colSpan={2}>
-              <Center><Image w={60}  src={state.MainImage.url_fullxfull} /></Center>
+              <Center>
+                <Image w={60} src={state.image} />
+              </Center>
             </GridItem>
             <GridItem colSpan={3}>
               <Stack spacing={4}>
@@ -37,9 +40,11 @@ function Product ({ location }) {
                 <Box mt={3}>
                   <Tag as='i'>Category: {state.taxonomy_path}</Tag>
                 </Box>
-                <Text mt={5} noOfLines={10}>Description: {state.description}</Text>
+                <Text mt={5} noOfLines={10}>
+                  Description: {state.description}
+                </Text>
                 <HStack>
-                  <Button w='xs' size='sm' colorScheme="linkedin">
+                  <Button w='xs' size='sm' colorScheme='linkedin'>
                     Buy now!
                   </Button>
                   <Button w='xs' size='sm'>

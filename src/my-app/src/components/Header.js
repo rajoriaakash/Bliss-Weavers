@@ -8,7 +8,7 @@ function Header () {
       <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         <a className='navbar-brand'>
           <img className='logo' src={logo} />
-          <div style={{ marginTop: '100%',marginBottom:'0' ,display:'inline'}}>
+          <div style={{ marginBottom: '0', display: 'inline' }}>
             <h1>Bliss Weavers</h1>
           </div>
           <div className='tagline'>
@@ -38,11 +38,13 @@ function Header () {
         </button>
 
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav mr-auto'>
+          <ul className='navbar-nav '>
             <li className='nav-item '>
-              <a className='nav-link' href='#home-section'>
-                Home <span className='sr-only'>(current)</span>
-              </a>
+              <Link to='/'>
+                <a className='nav-link' href='#home-section'>
+                  Home <span className='sr-only'>(current)</span>
+                </a>
+              </Link>
             </li>
             <li className='nav-item'>
               <a className='nav-link' href='#aboutUs-section'>
@@ -65,18 +67,17 @@ function Header () {
               </a>
             </li>
           </ul>
+
           <form className='form-inline my-2 my-lg-0'>
-        
-          <Link to = "signIn">
-            <button
-              className='btn btn-dark'
-              type='submit'
-              style={{ backgroundColor: '#1c0c5b' }}
-            >
-              Login
-            </button>
+            <Link to='signIn'>
+              <button
+                className='btn btn-dark'
+                type='submit'
+                style={{ backgroundColor: '#1c0c5b' }}
+              >
+                Login
+              </button>
             </Link>
- 
           </form>
         </div>
       </nav>
