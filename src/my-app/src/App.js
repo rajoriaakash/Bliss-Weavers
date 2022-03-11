@@ -24,12 +24,7 @@ function App () {
         />
         {/* <Route path='/signIn' element={<SignIn></SignIn>}></Route> */}
         <Route path='/product' exact element={<Store />} />
-        <Route
-          exact path='singleproduct/:listing_id'
-          render={(props) => {
-            <Product {...this.props}  />
-          }}
-        />
+        <Route path='/product/:listing_id' element={<Product />} />
         <Route>404 error page</Route>
       </Routes>
     </Router>

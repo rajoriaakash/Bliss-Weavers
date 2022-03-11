@@ -77,7 +77,7 @@ function Store () {
               return (
                 <Link
                 key={item.listing_id}
-                  to={{ pathname: `singleproduct/${item.listing_id}`, state: item }}
+                  to={ `/product/${item.listing_id}`}
                 >
                   <StoreItem {...item} />
                 </Link>

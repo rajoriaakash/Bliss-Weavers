@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Box,
   Button,
@@ -14,14 +14,34 @@ import {
   Tag
 } from '@chakra-ui/react'
 import Header from './components/Header'
+import { useParams } from 'react-router-dom'
+import { useRef } from 'react'
 
 // const Header = ({ title }) => (
 //   <Box padding={6} shadow='md'>
 //     <Heading>{title}</Heading>
 //   </Box>
 // )
-function Product ( {location} ) {
-    const {state} = location
+
+function Product () {
+  const [state, setState] = useState({})
+  const { listing_id } = useParams()
+  console.log(listing_id)
+
+  const [image, setImage] = useState({})
+  
+  useEffect(async () => {
+    const response = await fetch(
+      `https://openapi.etsy.com/v2/listings/${listing_id}?api_key=b2trjlfahlgzbgecvb26mbct&includes=MainImage&limit=100&offset=250&`
+    )
+    // .then(res => res.json())
+    // .then(data => setState(data.results[0]))
+    const data = await response.json()
+    setState(data.results[0])
+    setImage(data.results[0].MainImage)
+  }, [])
+  console.log(state)
+
   return (
     <Box>
       <Header />
@@ -30,7 +50,7 @@ function Product ( {location} ) {
           <SimpleGrid spacing={4} columns={{ base: 1, md: 5 }}>
             <GridItem colSpan={2}>
               <Center>
-                <Image w={60} src={state.image} />
+                <Image src={image.url_fullxfull} />
               </Center>
             </GridItem>
             <GridItem colSpan={3}>
