@@ -6,7 +6,7 @@ import Store from './components/Store.js'
 import Product from './SingleProduct.js'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { category } from './components/Products'
-import { SignIn } from './firebase/utils/signIn'
+// import { SignIn } from './firebase/utils/signIn'
 
 function App () {
   return (
@@ -22,12 +22,9 @@ function App () {
             </div>
           }
         />
-        <Route path='signIn' element={<SignIn></SignIn>}></Route>
-        <Route path='/product' element={<Store />} />
-        <Route
-          path='/product/:user_id'
-          render={props => <Product {...props} />}
-        />
+        {/* <Route path='/signIn' element={<SignIn></SignIn>}></Route> */}
+        <Route path='/product' exact element={<Store />} />
+        <Route path='/product/:listing_id' element={<Product />} />
         <Route>404 error page</Route>
       </Routes>
     </Router>

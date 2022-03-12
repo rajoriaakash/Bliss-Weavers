@@ -1,10 +1,20 @@
 import React from 'react'
 import {
-  Box,  Image,  Heading,  SimpleGrid,  Spacer,  Tag,  Center,  Input, Spinner} from '@chakra-ui/react'
+  Box,
+  Image,
+  Heading,
+  SimpleGrid,
+  Spacer,
+  Tag,
+  Center,
+  Input,
+  Spinner
+} from '@chakra-ui/react'
 import axios from 'axios'
 import Header from './Header'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Footer from './Footer'
 
 function StoreItem (props) {
   return (
@@ -41,7 +51,7 @@ function Store () {
 
   return (
     <Box>
-      <Header title='Fake Store' />
+      <Header />
       {loading ? (
         <Center pt={4}>
           <Spinner />
@@ -65,7 +75,10 @@ function Store () {
           <SimpleGrid columns={4} spacing={10} mt={4} p={2}>
             {searchItem.map(item => {
               return (
-                <Link to={{ pathname: `product/${item.user_id}`, state: item }}>
+                <Link
+                key={item.listing_id}
+                  to={ `/product/${item.listing_id}`}
+                >
                   <StoreItem {...item} />
                 </Link>
               )
@@ -73,6 +86,7 @@ function Store () {
           </SimpleGrid>
         </Box>
       )}
+      <Footer />
     </Box>
   )
 }

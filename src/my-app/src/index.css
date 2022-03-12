@@ -4,20 +4,36 @@ body {
 /* navbar */
 header {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  top: 0;
+  z-index: 100;
+  position: sticky;
 }
+
 header h1 {
   font-weight: 500;
   font-size: 2rem;
   display: inline;
 }
+
+.collapse {
+  display: flex;
+  justify-content: space-around;
+}
 .navbar {
   background-color: #d5d5d5;
 }
+
 header .nav-item {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 header .nav-link {
   color: gray;
+
+  text-decoration-line: none;
+}
+header ul {
+  display: flex;
+  justify-content: space-evenly;
 }
 header .nav-link:hover {
   color: rgb(68, 67, 67);
@@ -36,11 +52,9 @@ header .nav-link:hover {
   box-shadow: 2px 2px 2px grey;
   margin-right: 5%;
 }
-.form-inline {
-  margin-right: 90px;
-}
+
 .form-inline .btn {
-  padding: 30% 60% 30% 60%;
+  padding: 30% 60%;
 }
 @media (max-width: 1000px) {
   .form-inline .btn {
@@ -67,7 +81,7 @@ footer p {
 .contact-us-main {
   background-color: #d5d5d5;
 }
-.contact-us-main div{
+.contact-us-main div {
   display: flex;
   flex-direction: row;
   justify-content: center;
