@@ -36,18 +36,23 @@ function Store () {
   const [StoreItems, setStoreItem] = useState([])
   const [loading, setLoading] = useState(true)
   const [searchItem, setSearchItem] = useState(StoreItems)
-
+  const [error,setError] = useState(null)
   useEffect(() => {
+    console.log("inside useEffect")
     axios
       .get(
         'https://openapi.etsy.com/v2/listings/active?api_key=b2trjlfahlgzbgecvb26mbct&includes=MainImage&limit=100&offset=250&'
       )
-      .then(({ data }) => {
+      .then(( response ) => {
+        console.log("response gathered")
         setLoading(false)
-        setStoreItem(data.results)
-        setSearchItem(data.results)
+        setStoreItem(response.data.results)
+        setSearchItem(response.data.results)
+      }).catch(error => {
+        setError(error)
+        console.log(error)
       })
-  }, [])
+  })
 
   return (
     <Box>
