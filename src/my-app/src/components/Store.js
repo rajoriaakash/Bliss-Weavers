@@ -41,7 +41,9 @@ function Store () {
     console.log("inside useEffect")
     axios
       .get(
-        'https://openapi.etsy.com/v2/listings/active?api_key=b2trjlfahlgzbgecvb26mbct&includes=MainImage&limit=100&offset=250&'
+        'https://openapi.etsy.com/v2/listings/active?api_key=b2trjlfahlgzbgecvb26mbct&includes=MainImage&limit=100&offset=250&',
+        {'Access-Control-Allow-Credentials':'*'
+        ,crossdomain: true,}
       )
       .then(( response ) => {
         console.log("response gathered")
